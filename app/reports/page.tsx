@@ -14,7 +14,9 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  Cell,
 } from "recharts"
+import { useThemeColors } from "@/hooks/use-theme-colors"
 
 const profitLossData = [
   { month: "Jan", revenue: 30, netIncome: 5 },
@@ -27,13 +29,14 @@ const profitLossData = [
 ]
 
 const balanceSheetData = [
-  { category: "Assets", amount: 150000 },
-  { category: "Liabilities", amount: 75000 },
-  { category: "Equity", amount: 75000 },
+  { category: "Assets", amount: 150000, color: "#3b82f6" },
+  { category: "Liabilities", amount: 75000, color: "#f97316" },
+  { category: "Equity", amount: 75000, color: "#10b981" },
 ]
 
 export default function ReportsPage() {
   const [activeTab, setActiveTab] = useState("profit-loss")
+  const { primary, chart2, textColor } = useThemeColors()
 
   return (
     <AppLayout>
@@ -94,23 +97,25 @@ export default function ReportsPage() {
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                   <XAxis
                     dataKey="month"
-                    stroke="hsl(var(--muted-foreground))"
-                    style={{ fontSize: "12px" }}
+                    stroke={textColor}
+                    tick={{ fill: textColor, fontSize: 12 }}
                   />
                   <YAxis
-                    stroke="hsl(var(--muted-foreground))"
-                    style={{ fontSize: "12px" }}
+                    stroke={textColor}
+                    tick={{ fill: textColor, fontSize: 12 }}
                   />
                   <Tooltip
                     contentStyle={{
                       backgroundColor: "hsl(var(--card))",
                       border: "1px solid hsl(var(--border))",
                       borderRadius: "8px",
+                      opacity: 0.95,
                     }}
+                    cursor={{ fill: "rgba(255, 255, 255, 0.1)" }}
                   />
-                  <Legend />
-                  <Bar dataKey="revenue" fill="hsl(var(--chart-1))" name="Revenue" />
-                  <Bar dataKey="netIncome" fill="hsl(var(--chart-2))" name="Net Income" />
+                  <Legend wrapperStyle={{ color: textColor }} />
+                  <Bar dataKey="revenue" fill={primary} name="Revenue" />
+                  <Bar dataKey="netIncome" fill={chart2} name="Net Income" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
@@ -132,28 +137,33 @@ export default function ReportsPage() {
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                   <XAxis
                     type="number"
-                    stroke="hsl(var(--muted-foreground))"
-                    style={{ fontSize: "12px" }}
+                    stroke={textColor}
+                    tick={{ fill: textColor, fontSize: 12 }}
                   />
                   <YAxis
                     dataKey="category"
                     type="category"
-                    stroke="hsl(var(--muted-foreground))"
-                    style={{ fontSize: "12px" }}
+                    stroke={textColor}
+                    tick={{ fill: textColor, fontSize: 12 }}
                   />
                   <Tooltip
                     contentStyle={{
                       backgroundColor: "hsl(var(--card))",
                       border: "1px solid hsl(var(--border))",
                       borderRadius: "8px",
+                      opacity: 0.95,
                     }}
+                    cursor={{ fill: "rgba(255, 255, 255, 0.1)" }}
                   />
                   <Bar
                     dataKey="amount"
-                    fill="hsl(var(--chart-1))"
                     name="Amount ($)"
                     radius={[0, 4, 4, 0]}
-                  />
+                  >
+                    {balanceSheetData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>

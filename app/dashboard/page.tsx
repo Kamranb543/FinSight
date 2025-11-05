@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Search, TrendingUp, AlertTriangle, ArrowRight } from "lucide-react"
 import {
-  LineChart,
+  ComposedChart,
+  Area,
   Line,
   XAxis,
   YAxis,
@@ -14,6 +15,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts"
+import { useThemeColors } from "@/hooks/use-theme-colors"
 
 const cashFlowData = [
   { month: "Jan", inflow: 45, outflow: 30 },
@@ -44,6 +46,8 @@ const insights = [
 ]
 
 export default function DashboardPage() {
+  const { primary, textColor } = useThemeColors()
+
   return (
     <AppLayout>
       <div className="space-y-6">
@@ -104,42 +108,51 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={cashFlowData}>
+                <ComposedChart data={cashFlowData}>
+                  <defs>
+                    <linearGradient id="inflowGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor={primary} stopOpacity={0.3} />
+                      <stop offset="100%" stopColor={primary} stopOpacity={0.05} />
+                    </linearGradient>
+                  </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                   <XAxis
                     dataKey="month"
-                    stroke="hsl(var(--muted-foreground))"
-                    style={{ fontSize: "12px" }}
+                    stroke={textColor}
+                    tick={{ fill: textColor, fontSize: 12 }}
                   />
                   <YAxis
-                    stroke="hsl(var(--muted-foreground))"
-                    style={{ fontSize: "12px" }}
+                    stroke={textColor}
+                    tick={{ fill: textColor, fontSize: 12 }}
                   />
                   <Tooltip
                     contentStyle={{
                       backgroundColor: "hsl(var(--card))",
                       border: "1px solid hsl(var(--border))",
                       borderRadius: "8px",
+                      opacity: 0.95,
                     }}
+                    cursor={{ fill: "rgba(255, 255, 255, 0.1)" }}
                   />
-                  <Legend />
-                  <Line
+                  <Legend wrapperStyle={{ color: textColor }} />
+                  <Area
                     type="monotone"
                     dataKey="inflow"
-                    stroke="hsl(var(--chart-1))"
+                    stroke={primary}
                     strokeWidth={2}
+                    fill="url(#inflowGradient)"
                     dot={{ r: 4 }}
                     name="Inflow"
                   />
                   <Line
                     type="monotone"
                     dataKey="outflow"
-                    stroke="hsl(var(--destructive))"
+                    stroke="#ef4444"
                     strokeWidth={2}
                     dot={{ r: 4 }}
                     name="Outflow"
                   />
-                </LineChart>
+                </ComposedChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
@@ -153,7 +166,7 @@ export default function DashboardPage() {
                 const Icon = insight.icon
                 return (
                   <div key={index} className="flex gap-3">
-                    <Icon className={`h-5 w-5 ${insight.iconColor} mt-0.5 flex-shrink-0`} />
+                    <Icon className={`h-5 w-5 ${insight.iconColor} mt-0.5 shrink-0`} />
                     <p className="text-sm text-muted-foreground">{insight.title}</p>
                   </div>
                 )
