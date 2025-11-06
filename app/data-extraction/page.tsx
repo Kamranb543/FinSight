@@ -15,7 +15,7 @@ export default function DataExtractionPage() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Ask FiNet: 'What was my net income in June?'"
+              placeholder="Ask FinSight AI: 'What was my net income in October?'"
               className="pl-9 w-full sm:w-[400px]"
             />
           </div>
@@ -25,7 +25,7 @@ export default function DataExtractionPage() {
           <CardHeader>
             <CardTitle>Upload a Document</CardTitle>
             <CardDescription>
-              Simulate uploading an invoice, receipt, or bank statement. FiNet will analyze the document and extract the key data points automatically.
+              Simulate uploading an invoice, receipt, or bank statement. FinSight AI will analyze the document and extract the key data points automatically.
             </CardDescription>
           </CardHeader>
           <CardContent>

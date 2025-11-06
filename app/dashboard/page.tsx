@@ -18,13 +18,13 @@ import {
 import { useThemeColors } from "@/hooks/use-theme-colors"
 
 const cashFlowData = [
-  { month: "Jan", inflow: 45, outflow: 30 },
-  { month: "Feb", inflow: 52, outflow: 35 },
-  { month: "Mar", inflow: 48, outflow: 38 },
-  { month: "Apr", inflow: 61, outflow: 42 },
-  { month: "May", inflow: 55, outflow: 45 },
-  { month: "Jun", inflow: 68, outflow: 48 },
-  { month: "Jul", inflow: 72, outflow: 50 },
+  { month: "Apr", inflow: 45, outflow: 30 },
+  { month: "May", inflow: 52, outflow: 35 },
+  { month: "Jun", inflow: 48, outflow: 38 },
+  { month: "Jul", inflow: 61, outflow: 42 },
+  { month: "Aug", inflow: 55, outflow: 45 },
+  { month: "Sep", inflow: 68, outflow: 48 },
+  { month: "Oct", inflow: 72, outflow: 50 },
 ]
 
 const insights = [
@@ -57,7 +57,7 @@ export default function DashboardPage() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Ask FiNet: 'What was my net income in June?'"
+              placeholder="Ask FinSight AI: 'What was my net income in October?'"
               className="pl-9 w-full sm:w-[400px]"
             />
           </div>
@@ -159,7 +159,7 @@ export default function DashboardPage() {
 
           <Card className="col-span-1 md:col-span-2 lg:col-span-3">
             <CardHeader>
-              <CardTitle>FiNet Insights</CardTitle>
+              <CardTitle>FinSight AI Insights</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {insights.map((insight, index) => {

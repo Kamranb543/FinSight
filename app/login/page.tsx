@@ -45,7 +45,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md space-y-8">
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold tracking-tight">
-            Welcome to <span className="text-primary">FiNet</span>
+            Welcome to <span className="text-primary">FinSight AI</span>
           </h1>
           <p className="text-muted-foreground">
             The Future of Financial Management.

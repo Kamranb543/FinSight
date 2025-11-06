@@ -85,7 +85,7 @@ export function Sidebar() {
     <div className="flex h-full w-full flex-col bg-sidebar border-r border-sidebar-border overflow-y-auto">
       <div className="flex h-16 items-center px-6 border-b border-sidebar-border flex-shrink-0">
         <h1 className="text-xl font-semibold text-sidebar-foreground">
-          <span className="text-sidebar-primary">Fi</span>Net
+          <span className="text-sidebar-primary">Fin</span>Sight AI
         </h1>
       </div>
 

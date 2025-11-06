@@ -19,13 +19,13 @@ import {
 import { useThemeColors } from "@/hooks/use-theme-colors"
 
 const profitLossData = [
-  { month: "Jan", revenue: 30, netIncome: 5 },
-  { month: "Feb", revenue: 35, netIncome: 7 },
-  { month: "Mar", revenue: 42, netIncome: 10 },
-  { month: "Apr", revenue: 45, netIncome: 12 },
-  { month: "May", revenue: 40, netIncome: 8 },
-  { month: "Jun", revenue: 50, netIncome: 15 },
-  { month: "Jul", revenue: 55, netIncome: 20 },
+  { month: "Apr", revenue: 30, netIncome: 5 },
+  { month: "May", revenue: 35, netIncome: 7 },
+  { month: "Jun", revenue: 42, netIncome: 10 },
+  { month: "Jul", revenue: 45, netIncome: 12 },
+  { month: "Aug", revenue: 40, netIncome: 8 },
+  { month: "Sep", revenue: 50, netIncome: 15 },
+  { month: "Oct", revenue: 55, netIncome: 20 },
 ]
 
 const balanceSheetData = [
@@ -47,7 +47,7 @@ export default function ReportsPage() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Ask FiNet: 'What was my net income in June?'"
+              placeholder="Ask FinSight AI: 'What was my net income in October?'"
               className="pl-9 w-full sm:w-[400px]"
             />
           </div>
@@ -125,7 +125,7 @@ export default function ReportsPage() {
         {activeTab === "balance-sheet" && (
           <Card>
             <CardHeader>
-              <CardTitle>Balance Sheet (as of Jul 15, 2025)</CardTitle>
+              <CardTitle>Balance Sheet (as of Oct 15, 2025)</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>

@@ -16,7 +16,7 @@ export default function TaxCenterPage() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Ask FiNet: 'What was my net income in June?'"
+              placeholder="Ask FinSight AI: 'What was my net income in October?'"
               className="pl-9 w-full sm:w-[400px]"
             />
           </div>
@@ -36,7 +36,7 @@ export default function TaxCenterPage() {
             </CardHeader>
             <CardContent>
               <p className="text-4xl font-bold text-primary mb-2">$8,540.00</p>
-              <p className="text-sm text-muted-foreground">Due: Sep 15, 2025</p>
+              <p className="text-sm text-muted-foreground">Due: Oct 15, 2025</p>
             </CardContent>
           </Card>
 

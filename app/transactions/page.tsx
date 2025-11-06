@@ -8,25 +8,25 @@ import { Search } from "lucide-react"
 
 const transactions = [
   {
-    date: "2025-07-12",
+    date: "2025-10-12",
     description: "Stripe Payout",
     amount: 7500.0,
     category: "Sales Revenue",
   },
   {
-    date: "2025-07-11",
+    date: "2025-10-11",
     description: "Amazon Web Services",
     amount: -450.75,
     category: "Cloud & Hosting",
   },
   {
-    date: "2025-07-10",
+    date: "2025-10-10",
     description: "HubSpot Subscription",
     amount: -200.0,
     category: "Software & Subscriptions",
   },
   {
-    date: "2025-07-09",
+    date: "2025-10-09",
     description: "Office Depot",
     amount: -112.45,
     category: "Office Supplies",
@@ -43,7 +43,7 @@ export default function TransactionsPage() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Ask FiNet: 'What was my net income in June?'"
+              placeholder="Ask FinSight AI: 'What was my net income in October?'"
               className="pl-9 w-full sm:w-[400px]"
             />
           </div>
@@ -53,7 +53,7 @@ export default function TransactionsPage() {
           <CardHeader>
             <CardTitle>Review & Reconcile</CardTitle>
             <CardDescription>
-              FiNet has automatically categorized new transactions. Review the suggestions and approve to reconcile your books.
+              FinSight AI has automatically categorized new transactions. Review the suggestions and approve to reconcile your books.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -64,7 +64,7 @@ export default function TransactionsPage() {
                     <th className="px-4 py-3 text-left text-sm font-medium">DATE</th>
                     <th className="px-4 py-3 text-left text-sm font-medium">DESCRIPTION</th>
                     <th className="px-4 py-3 text-left text-sm font-medium">AMOUNT</th>
-                    <th className="px-4 py-3 text-left text-sm font-medium">FINET SUGGESTED CATEGORY</th>
+                    <th className="px-4 py-3 text-left text-sm font-medium">FINSIGHT AI SUGGESTED CATEGORY</th>
                     <th className="px-4 py-3 text-left text-sm font-medium">ACTION</th>
                   </tr>
                 </thead>

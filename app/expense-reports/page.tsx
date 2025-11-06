@@ -8,14 +8,14 @@ import { Search } from "lucide-react"
 
 const expenseReports = [
   {
-    id: "ER-2025-003",
+    id: "ER-2025-010",
     submittedBy: "Alice Johnson",
     amount: 450.5,
     status: "Approved",
     action: "View",
   },
   {
-    id: "ER-2025-002",
+    id: "ER-2025-009",
     submittedBy: "Bob Williams",
     amount: 1200.0,
     status: "Pending Approval",
@@ -34,7 +34,7 @@ export default function ExpenseReportsPage() {
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Ask FiNet: 'What was my net income in June?'"
+                placeholder="Ask FinSight AI: 'What was my net income in October?'"
                 className="pl-9 w-full sm:w-[400px]"
               />
             </div>

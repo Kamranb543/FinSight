@@ -16,7 +16,7 @@ export default function PayrollPage() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Ask FiNet: 'What was my net income in June?'"
+              placeholder="Ask FinSight AI: 'What was my net income in October?'"
               className="pl-9 w-full sm:w-[400px]"
             />
           </div>
@@ -33,11 +33,11 @@ export default function PayrollPage() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <p className="text-sm text-muted-foreground">Next Pay Run</p>
-                <p className="text-lg font-medium">Jul 1 - Jul 15</p>
+                <p className="text-lg font-medium">Oct 1 - Oct 15</p>
               </div>
               <div className="text-right">
                 <p className="text-sm text-muted-foreground">Pay Date</p>
-                <p className="text-lg font-medium">Jul 20, 2025</p>
+                <p className="text-lg font-medium">Oct 20, 2025</p>
               </div>
             </div>
             <div className="border-t border-border pt-6">

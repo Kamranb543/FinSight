@@ -40,7 +40,7 @@ export default function BudgetingPage() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Ask FiNet: 'What was my net income in June?'"
+              placeholder="Ask FinSight AI: 'What was my net income in October?'"
               className="pl-9 w-full sm:w-[400px]"
             />
           </div>
@@ -50,7 +50,7 @@ export default function BudgetingPage() {
           <CardHeader>
             <CardTitle>Budget vs. Actuals</CardTitle>
             <CardDescription>
-              Track your spending against your budget in real-time. FiNet flags categories that are over budget.
+              Track your spending against your budget in real-time. FinSight AI flags categories that are over budget.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">

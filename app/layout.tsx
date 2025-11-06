@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FiNet - Financial Management",
+  title: "FinSight AI - Financial Management",
   description: "The Future of Financial Management",
 };
 

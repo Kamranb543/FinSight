@@ -9,12 +9,12 @@ import { Search } from "lucide-react"
 const accountsPayable = [
   {
     company: "Innovate Tech Inc.",
-    dueDate: "Aug 14, 2025",
+    dueDate: "Oct 14, 2025",
     amount: 1250.0,
   },
   {
     company: "Office Supplies Co.",
-    dueDate: "Jul 28, 2025",
+    dueDate: "Oct 28, 2025",
     amount: 345.2,
   },
 ]
@@ -42,7 +42,7 @@ export default function WorkflowsPage() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Ask FiNet: 'What was my net income in June?'"
+              placeholder="Ask FinSight AI: 'What was my net income in October?'"
               className="pl-9 w-full sm:w-[400px]"
             />
           </div>
